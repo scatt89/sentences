@@ -14,6 +14,8 @@ public class Advice {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+//	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="adv_seq")
+//	@SequenceGenerator(name = "adv_seq", sequenceName = "adv_seq", allocationSize=1)
 	@Column(name="id")
 	private long id;
 	
