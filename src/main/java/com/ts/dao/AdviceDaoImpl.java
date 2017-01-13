@@ -1,5 +1,6 @@
 package com.ts.dao;
 
+import java.net.URL;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -8,8 +9,12 @@ import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.ts.SentencesApplication;
 import com.ts.model.Advice;
 
 @Repository
@@ -76,6 +81,23 @@ public class AdviceDaoImpl implements AdviceDao{
 		}
 		
 		return advice;
+	}
+
+	@Override
+	@Transactional
+	public void initialize(List<Advice> advices) throws Exception{
+		
+		try{
+			
+			for(Advice advice: advices){
+				sessionFactory.getCurrentSession().saveOrUpdate(advice);
+			}
+			
+		}catch(Exception e){
+			
+			throw e;
+			
+		}
 	}
 	
 }

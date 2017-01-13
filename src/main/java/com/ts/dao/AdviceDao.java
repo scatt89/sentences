@@ -16,4 +16,6 @@ public interface AdviceDao {
 	
 	public Advice getRandom();
 	
+	public void initialize(List<Advice> advices) throws Exception;
+	
 }

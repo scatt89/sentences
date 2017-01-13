@@ -105,9 +105,7 @@ public class AdviceController {
 			
 			List<Advice> frases = mapper.readValue(url, mapper.getTypeFactory().constructCollectionType(List.class, Advice.class));
 			
-			for(Advice frase: frases){
-				this.adviceDao.saveOrUpdate(frase);
-			}
+			adviceDao.initialize(frases);
 			
 			response = new ResponseEntity<String>("Everything is ok",HttpStatus.CREATED);
 			
