@@ -1,6 +1,8 @@
 package com.ts.controller;
 
+import java.net.URL;
 import java.util.Collection;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.ts.SentencesApplication;
 import com.ts.dao.AdviceDao;
 import com.ts.model.Advice;
 
@@ -83,6 +87,36 @@ public class AdviceController {
 //			log.info("Eliminado consejo "+advice.toString());
 //		}
 		
+		return response;
+	}
+	
+	@RequestMapping(value="/initializeDB", method = RequestMethod.GET)
+	public ResponseEntity<String> initializeDB(){
+		
+		ResponseEntity<String> response;
+		
+		String fileName = "frases.json";
+		
+		try{
+			
+			URL url = SentencesApplication.class.getClassLoader().getResource(fileName);
+			
+			ObjectMapper mapper = new ObjectMapper();
+			
+			List<Advice> frases = mapper.readValue(url, mapper.getTypeFactory().constructCollectionType(List.class, Advice.class));
+			
+			for(Advice frase: frases){
+				this.adviceDao.saveOrUpdate(frase);
+			}
+			
+			response = new ResponseEntity<String>("Everything is ok",HttpStatus.CREATED);
+			
+		}catch(Exception e){
+			
+			response = new ResponseEntity<String>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
+			
+		}
+
 		return response;
 	}
 	
