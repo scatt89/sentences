@@ -93,9 +93,11 @@ public class AdviceController {
 	@RequestMapping(value="/initializeDB", method = RequestMethod.GET)
 	public ResponseEntity<String> initializeDB(){
 		
+		log.info("Ejecutando inicialización de BD");
+		
 		ResponseEntity<String> response;
 		
-		String fileName = "frases.json";
+		String fileName = "static/frases.json";
 		
 		try{
 			
@@ -109,9 +111,12 @@ public class AdviceController {
 			
 			response = new ResponseEntity<String>("Everything is ok",HttpStatus.CREATED);
 			
+			log.info("Se han introducido todas las entradas predeterminadas en la BD");
+			
 		}catch(Exception e){
 			
 			response = new ResponseEntity<String>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
+			log.error("Se ha producido un error al intentar introducir las entradas en la BD",e);
 			
 		}
 
