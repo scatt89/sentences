@@ -13,17 +13,17 @@ response example:
   {
     "id": 2,
     "author": "La loca de los gatos",
-    "advice": "AHHHHHHHHHHHHHHHHHHHH!"
+    "adviceVO": "AHHHHHHHHHHHHHHHHHHHH!"
   },
   {
     "id": 3,
     "author": "Maria Josefa",
-    "advice": "Antes todo esto era campo, hijo... Menudos porrillos liábamos."
+    "adviceVO": "Antes todo esto era campo, hijo... Menudos porrillos liábamos."
   },
   {
     "id": 4,
     "author": "La tortuga sabia",
-    "advice": "Mira hacia la luna pequeño aprendiz, sigue mirando mientras te hago un hijo."
+    "adviceVO": "Mira hacia la luna pequeño aprendiz, sigue mirando mientras te hago un hijo."
   }
 ]
 ```
@@ -36,7 +36,7 @@ response example:
 {
   "id": 3,
   "author": "Maria Josefa",
-  "advice": "Antes todo esto era campo, hijo... Menudos porrillos liábamos."
+  "adviceVO": "Antes todo esto era campo, hijo... Menudos porrillos liábamos."
 }
 ```
 ### Get sentence by id
@@ -44,7 +44,7 @@ method: GET
 link: [https://sentences01.herokuapp.com/sentences/id={id}](https://sentences01.herokuapp.com/sentences/id=2)
 response example:
 ```json
-{"id":2,"author":"La loca de los gatos","advice":"AHHHHHHHHHHHHHHHHHHHH!"}
+{"id":2,"author":"La loca de los gatos","adviceVO":"AHHHHHHHHHHHHHHHHHHHH!"}
 ```
 
 ### Add new sentence
@@ -58,7 +58,7 @@ body:
 ```json
 {
 	"author":"La loca de los gatos",
-	"advice":"AHHHHHHHHHHHHHHHHHHHH!"
+	"adviceVO":"AHHHHHHHHHHHHHHHHHHHH!"
 }
 ```
 response example:
@@ -66,7 +66,7 @@ response example:
 {
   "id": 5,
   "author": "La loca de los gatos",
-  "advice": "AHHHHHHHHHHHHHHHHHHHH!"
+  "adviceVO": "AHHHHHHHHHHHHHHHHHHHH!"
 }
 ```
 
@@ -81,3 +81,10 @@ response example:
 ```json
 204 No Content
 ```
+
+## ToDo
+ - Create DTO's objects instead using domain objects as controller response
+ - Create all requests documented for this version
+ - Tests plz
+ - Create pro environment
+ - Migrate to kotlin?
