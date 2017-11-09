@@ -7,33 +7,28 @@ public class Advice {
     private Author author;
 
     public Advice(String id, String sentence, Author author) {
+        if(sentence == null) throw new IllegalArgumentException("sentence can't be null");
+        if(author == null) throw new IllegalArgumentException("author can't be null");
+
         this.id = id;
         this.sentence = sentence;
         this.author = author;
     }
 
-    public String getId() {
-        return id;
+    public Advice(String sentence, Author author) {
+        this(null, sentence, author);
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public String id(){
+        return this.id;
     }
 
-    public String getSentence() {
-        return sentence;
+    public String sentece() {
+        return this.sentence;
     }
 
-    public void setSentence(String sentence) {
-        this.sentence = sentence;
-    }
-
-    public Author getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(Author author) {
-        this.author = author;
+    public Author author() {
+        return this.author;
     }
 
     @Override

@@ -2,32 +2,22 @@ package com.ts.advices.domain.model;
 
 public class Author {
 
-    private String id;
     private String name;
+    private String userName;
 
-    public Author(String id, String name) {
-        this.id = id;
+    public Author(String name, String userName) {
+        if(userName == null) throw new IllegalArgumentException("userName Can't be null");
+
         this.name = name;
+        this.userName = userName;
     }
 
-    public String id() {
-        return id;
+    public String userName() {
+        return this.userName;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public String name() {
+        return this.name;
     }
 
     @Override
@@ -37,22 +27,22 @@ public class Author {
 
         Author author = (Author) o;
 
-        if (id != null ? !id.equals(author.id) : author.id != null) return false;
-        return name != null ? name.equals(author.name) : author.name == null;
+        if (name != null ? !name.equals(author.name) : author.name != null) return false;
+        return userName != null ? userName.equals(author.userName) : author.userName == null;
     }
 
     @Override
     public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (userName != null ? userName.hashCode() : 0);
         return result;
     }
 
     @Override
     public String toString() {
         return "Author{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
+                ", userName='" + userName + '\'' +
                 '}';
     }
 }

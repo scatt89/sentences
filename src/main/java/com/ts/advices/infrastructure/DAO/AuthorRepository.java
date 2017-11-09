@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface AuthorRepository extends CrudRepository<AuthorVO, Long> {
 
-    AuthorVO findByName(String authorName);
+    AuthorVO findByUserName(String userName);
 }

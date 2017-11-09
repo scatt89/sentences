@@ -9,13 +9,14 @@ public class AdviceVO implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="id")
+	@Column(name="ID")
 	private Long id;
 	
-    @ManyToOne(targetEntity = AuthorVO.class)
+    @ManyToOne
+    @JoinColumn(name = "USERID")
 	private AuthorVO author;
 	
-	@Column(name="sentence", nullable = false)
+	@Column(name="SENTENCE", nullable = false)
 	private String sentence;
 
     public AdviceVO() {

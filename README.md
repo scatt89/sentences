@@ -1,7 +1,7 @@
 # Sentences api
 This api provides funny sentences for ["La tortuga sabia"](https://github.com/scatt89/tortuga_sabia) web app. Currently is deployed in a Heroku dyno called [sentences01](https://sentences01.herokuapp.com/).
 
-Uses tecnologies like **Java 8**, **Spring MVC**, **Spring Boot**, **Hibernate**, **Postgresql**.
+Uses tecnologies like **Java 8**, **Spring MVC**, **Spring Boot**, **Spring JPA**, **Postgresql**.
 
 ## Rest Methods
 ### Get all sentences in database
@@ -83,8 +83,7 @@ response example:
 ```
 
 ## ToDo
- - Create DTO's objects instead using domain objects as controller response
- - Create all requests documented for this version
- - Tests plz
  - Create pro environment
+ - Tests plz
  - Migrate to kotlin?
+ - Migrate to Gradle?
