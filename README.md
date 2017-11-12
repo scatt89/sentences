@@ -83,7 +83,6 @@ response example:
 ```
 
 ## ToDo
- - Create local profile with another databases (mysql and postgres)
  - Dockerize
  - Create pro environment and deploy in AWS
  - Ci with jenkins

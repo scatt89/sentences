@@ -8,7 +8,8 @@ import java.io.Serializable;
 public class AdviceVO implements Serializable{
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "advices_id_seq")
+    @SequenceGenerator(name = "advices_id_seq", sequenceName = "advices_id_seq")
 	@Column(name="ID")
 	private Long id;
 	

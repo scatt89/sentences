@@ -1,7 +1,7 @@
 spring:
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: none
   datasource:
     url: jdbc:postgresql://localhost:5432/test
     username: test
