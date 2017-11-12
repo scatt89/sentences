@@ -83,7 +83,10 @@ response example:
 ```
 
 ## ToDo
- - Create pro environment
+ - Create local profile with another databases (mysql and postgres)
+ - Dockerize
+ - Create pro environment and deploy in AWS
+ - Ci with jenkins
  - Tests plz
  - Migrate to kotlin?
  - Migrate to Gradle?

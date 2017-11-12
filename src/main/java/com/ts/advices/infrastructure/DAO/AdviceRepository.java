@@ -13,6 +13,6 @@ public interface AdviceRepository extends CrudRepository<AdviceVO, Long> {
 
     List<AdviceVO> findByAuthor(AuthorVO author);
 
-    @Query(value="SELECT * FROM ADVICES ORDER BY RAND() LIMIT 1", nativeQuery = true)
+    @Query(value="SELECT * FROM ADVICES ORDER BY random() LIMIT 1", nativeQuery = true)
     List<AdviceVO> findRandom();
 }
