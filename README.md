@@ -82,8 +82,14 @@ response example:
 204 No Content
 ```
 
+## Run in local
+- run `mvn clean package` and copy the jar target/sentences-0.0.1-SNAPSHOT.jar to ci/app/sentences.jar before run docker
+`
+java -jar sentences.jar --spring.profiles.active="pro" --DB_URL="jdbc:postgresql://localhost:5432/test" --DB_USER="test" --DB_PASS="test"
+`
+
 ## ToDo
- - Dockerize
+ - Dockerize in local
  - Create pro environment and deploy in AWS
  - Ci with jenkins
  - Tests plz

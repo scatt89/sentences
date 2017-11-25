@@ -1,10 +1,7 @@
 spring:
-  jpa:
-    hibernate:
-      ddl-auto: none
   datasource:
     url: jdbc:postgresql://localhost:5432/test
     username: test
-    password: 1234
+    password: test
     schema: classpath:schema-postgresql.sql
     data: classpath:data-postgresql.sql
