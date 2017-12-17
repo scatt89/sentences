@@ -23,4 +23,4 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
-/ci/app/sentences.jar
+/ci/conteiners/app/sentences.jar
