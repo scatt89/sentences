@@ -64,9 +64,9 @@ response example:
 - Look up the ci/README.md file
 
 ## ToDo
- - Dockerize in local
+ - finish and beautify kotlinization
  - Ci with jenkins
  - Create pro environment and deploy in AWS
+ - Refactor some controller endpoints using the right verbs
  - Tests plz
- - Migrate to kotlin?
  - Migrate to Gradle?

@@ -87,7 +87,7 @@ public class AdviceController {
     }
 
     private AdviceResponseDTO mapToDTO(Advice advice) {
-        return new AdviceResponseDTO(advice.id(), advice.sentece(), advice.author().userName(), advice.author().name());
+        return new AdviceResponseDTO(advice.getId(), advice.getSentence(), advice.getAuthor().getUserName(), advice.getAuthor().getName());
     }
 
 }
