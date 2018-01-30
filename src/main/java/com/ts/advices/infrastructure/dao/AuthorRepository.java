@@ -1,6 +1,6 @@
-package com.ts.advices.infrastructure.DAO;
+package com.ts.advices.infrastructure.dao;
 
-import com.ts.advices.infrastructure.VO.AuthorVO;
+import com.ts.advices.infrastructure.vo.AuthorVO;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

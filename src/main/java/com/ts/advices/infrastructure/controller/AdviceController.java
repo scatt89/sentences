@@ -4,13 +4,11 @@ import com.ts.advices.Constants;
 import com.ts.advices.domain.model.Advice;
 import com.ts.advices.domain.model.Author;
 import com.ts.advices.domain.service.AdviceService;
-import com.ts.advices.infrastructure.DTO.AdviceRequestDTO;
-import com.ts.advices.infrastructure.DTO.AdviceResponseDTO;
+import com.ts.advices.infrastructure.dto.AdviceResponseDTO;
+import com.ts.advices.infrastructure.dto.AdviceRequestDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import sun.security.provider.certpath.OCSPResponse;
 
 import java.net.URI;
 import java.util.List;

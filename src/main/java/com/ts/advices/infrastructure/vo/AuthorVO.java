@@ -1,4 +1,4 @@
-package com.ts.advices.infrastructure.VO;
+package com.ts.advices.infrastructure.vo;
 
 import javax.persistence.*;
 import java.io.Serializable;
