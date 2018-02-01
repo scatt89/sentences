@@ -38,14 +38,14 @@ class AdviceRepositoryManager @Autowired constructor(val adviceRepository: Advic
 
         return if (adviceVOList.isEmpty()) ArrayList()
         else adviceVOList
-                .map { Advice(it.id!!.toString(), it.sentence, mapFromVO(it.author)) }
+                .map { Advice(it.id.toString(), it.sentence!!, mapFromVO(it.author!!)) }
     }
 
     fun deleteAdviceBy(id: String) = adviceRepository.delete(java.lang.Long.parseLong(id))
 
     private fun mapFromVO(adviceVO: AdviceVO?): Advice? =
             if (adviceVO == null) null
-            else Advice(adviceVO.id.toString(), adviceVO.sentence, mapFromVO(adviceVO.author))
+            else Advice(adviceVO.id.toString(), adviceVO.sentence!!, mapFromVO(adviceVO.author!!))
 
     private fun mapFromVO(authorVO: AuthorVO): Author = Author(authorVO.name, authorVO.userName)
 
