@@ -1,3 +1,4 @@
 package com.ts.advices.infrastructure.dto
 
-data class AdviceRequestDTO(val userName: String, val sentence: String)
+//defaul values sucks, there is no other way? Didn't is suppose that noarg plugin should be works?
+data class AdviceRequestDTO(val userName: String = "", val sentence: String = "")
